@@ -19,8 +19,18 @@ function solve(password){
 
     let numberPattern = /\d+/g;
     let digits = password.match(numberPattern);
+    let len = "";
 
-    if(digits === null || digits.length < 2){
+    if(digits !== null){
+
+        for (let i = 0; i < digits.length; i++) {
+            len += digits[i];
+            
+        }
+    }
+    
+
+    if(digits === null || len.length < 2){
         isValid = false;
         console.log(`Password must have at least 2 digits`);
     }
@@ -29,8 +39,6 @@ function solve(password){
         console.log('Password is valid');
     }
 
-    
-
 }
 
-solve('MyPass123');
+solve('Pa$s$s');
