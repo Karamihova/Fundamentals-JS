@@ -12,7 +12,7 @@ function solve(array){
 }
 
 
-solve([3,
+solve([2,
     6, 7, 8, 9]
    );
 
