@@ -1,29 +1,25 @@
 function solve(input){
 
-    let fromSmallest = input;
-    let fromBiggest = input;
+    let arr = [];
+    let index = 0;
 
-    let sortedFromSmallest = fromSmallest.sort(function(a, b) {return a - b});
-    let sortedFromBiggest = fromBiggest.sort(function(a, b) {return b - a});
+    input.sort(function(a, b) {return a - b});
 
-    let sortedArr = [];
+    while(true){
 
-    for (let i = 0; i < input.length; i++) {
-        
-        let n = '';
-
-        if(i % 2 === 0){
-             n = sortedFromBiggest.shift();
-            
-        } else{
-            n = sortedFromSmallest.shift();
+        if(input.length <= 0){
+            console.log(arr.join(' '));
+            break;
         }
 
-        sortedArr.push(n);
-        
-    }
+        arr[index] = input.pop();
+        index++;
 
-    console.log(sortedArr.join(' '));
+        if(input.length > 0){
+           arr[index] =  input.shift();
+           index++;
+        }
+    }
 }
 
-solve([1, 8, 3, 7, 10])
+solve([1, 21, 3, 52, 69, 63, 31, 2, 18, 94]);
